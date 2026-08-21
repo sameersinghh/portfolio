@@ -1,14 +1,4 @@
-# Sameer Singh — Portfolio + F.R.I.D.A.Y.
-
-## ⚠️ Do this first
-
-An OpenAI key was pasted in plain text earlier in chat. Treat it as
-compromised:
-
-1. Go to https://platform.openai.com/api-keys and **revoke/delete** it.
-2. Create a **new** key.
-3. Put the new key only in `.streamlit/secrets.toml` (step 3 below) —
-   never in `app.py`, never in a commit.
+# Sameer Singh — Portfolio
 
 ## Project structure
 
@@ -35,21 +25,6 @@ pip install -r requirements.txt
 cp .streamlit/secrets.toml.example .streamlit/secrets.toml
 # now edit .streamlit/secrets.toml and paste your NEW key
 ```
-
-Add these files to `assets/` (exact lowercase names — case matters once
-you deploy to Linux, even though it won't matter on Windows/Mac locally):
-
-| File | Used for |
-|---|---|
-| `me.jpg` | sidebar + About Me photo |
-| `resume.pdf` | sidebar download button |
-| `moon.jpg`, `birds.jpg`, `hallway.jpg`, `redfort.jpg`, `beach.jpg`, `decor.jpg` | About Me photo gallery |
-| `spot1.jpeg`, `spot2.jpeg` | KPMG SPOT award photos |
-| `iitbombay.jpg` | Ubisoft contest photo |
-| `ncc.jpg`, `ncc_camp_certificate.jpeg` | NCC achievement photos |
-
-Any file you don't have yet is fine to skip — the app shows a small
-"add this file" note instead of crashing.
 
 Run it:
 
