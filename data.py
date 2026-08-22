@@ -239,6 +239,18 @@ SUGGESTED_QUESTIONS_PERSONAL = [
     "Tell me about the Network Security project",
     "What's his experience with SQL?",
     "Which project used deep learning?",
+    "Tell me about the Customer Churn project",
+    "What's the Merchant Sales Dashboard about?",
+    "What did he do in the YouTube analytics project?",
+    "What are his BI / dashboard skills?",
+    "What's his experience with Python?",
+    "What GenAI / LLM work has he done?",
+    "What's his educational background?",
+    "What certifications does he hold?",
+    "What are his notable achievements?",
+    "How can I contact Sameer?",
+    "What does he do outside of work?",
+    "Tell me about the academic internship at KPMG",
 ]
 
 SUGGESTED_QUESTIONS_WEB = [
