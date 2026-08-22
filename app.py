@@ -8,21 +8,29 @@ Config:         .streamlit/config.toml (theme), .streamlit/secrets.toml (API key
 """
 
 import os
+import random
+import time
 
 import streamlit as st
 
 from data import (
     PROFILE, SKILLS, EXPERIENCE, PROJECTS, ADDITIONAL_PROJECTS, EDUCATION,
     CERTIFICATIONS, ACHIEVEMENTS, BOOKS, HOBBIES, GALLERY,
-    SUGGESTED_QUESTIONS_PERSONAL, 
-    SUGGESTED_QUESTIONS_WEB,
-    PERSONAL_SYSTEM_PROMPT, WEB_SYSTEM_PROMPT,
+    SUGGESTED_QUESTIONS_PERSONAL, SUGGESTED_QUESTIONS_WEB, WEB_SYSTEM_PROMPT,
 )
-from chat_engine import get_client, stream_reply, friendly_error, PERSONAL_MODEL, WEB_MODEL
+import faq_engine
+from chat_engine import get_client, stream_reply, friendly_error, WEB_MODEL
+
+# Web Search mode is fully built (see chat_engine.py) but disabled in the UI
+# until OpenAI auth on the hosting side is sorted out. Personal mode never
+# depends on this flag or on OpenAI at all — it's pure local lookup.
+WEB_SEARCH_ENABLED = False
+
+SUGGESTIONS_SHOWN = 6
 
 st.set_page_config(
     page_title=f"{PROFILE['name']} | {PROFILE['tagline']}",
-    page_icon="📃",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -150,7 +158,7 @@ st.session_state.setdefault("fri_web_history", [])
 # ============================================================
 
 with st.sidebar:
-    safe_image(PROFILE["photo_path"], width='stretch')
+    safe_image(PROFILE["photo_path"], use_container_width=True)
     st.markdown(f"### {PROFILE['name']}")
     st.caption(PROFILE["tagline"])
     st.write(PROFILE["summary"])
@@ -162,7 +170,7 @@ with st.sidebar:
             st.download_button(
                 "⬇ Download resume", f,
                 file_name=f"{PROFILE['name'].replace(' ', '_')}_Resume.pdf",
-                mime="application/pdf", width='stretch',
+                mime="application/pdf", use_container_width=True,
             )
     else:
         st.caption(f"Add `{PROFILE['resume_path']}` to enable this download.")
@@ -210,23 +218,79 @@ tab1, tab2, tab3, tab4 = st.tabs([
 # TAB 1 — F.R.I.D.A.Y.
 # ------------------------------------------------------------
 
+def _word_stream(text, delay=0.02):
+    """Yield text word-by-word, for a typing feel with st.write_stream — no API involved."""
+    words = text.split(" ")
+    for i, w in enumerate(words):
+        yield w + (" " if i < len(words) - 1 else "")
+        time.sleep(delay)
+
+
+def _pick_suggestions(history_key, pool):
+    """Sample a random subset once per session/mode, reused until the chat is cleared."""
+    sample_key = f"{history_key}_suggestion_sample"
+    if sample_key not in st.session_state:
+        st.session_state[sample_key] = random.sample(pool, k=min(SUGGESTIONS_SHOWN, len(pool)))
+    return st.session_state[sample_key]
+
+
+def _render_suggestion_chips(history_key, suggestions):
+    st.caption("Try asking:")
+    for row_start in range(0, len(suggestions), 3):
+        row = suggestions[row_start:row_start + 3]
+        cols = st.columns(3)
+        for col, question in zip(cols, row):
+            if col.button(question, key=f"chip_{history_key}_{question}", use_container_width=True):
+                st.session_state[f"{history_key}_pending"] = question
+                st.rerun()
+
+
+def _clear_chat_button(history_key):
+    if st.button("🧹 Clear this chat", key=f"clear_{history_key}"):
+        st.session_state[history_key] = []
+        st.session_state.pop(f"{history_key}_suggestion_sample", None)
+        st.rerun()
+
+
 with tab1:
     mode = st.segmented_control(
-        "Mode", options=["Personal","Web Search"], default="Personal",
+        "Mode", options=["Personal", "Web Search"], default="Personal",
         required=True, key="fri_mode", label_visibility="collapsed",
     )
 
     if mode == "Personal":
         st.markdown(
             '<div class="fri-mode-box">🧠 <b>Personal mode</b> — answers only from this portfolio: '
-            'Sameer\'s resume, skills, experience and projects.</div>',
+            'Sameer\'s resume, skills, experience and projects. Runs entirely locally — '
+            'no API key or internet call involved.</div>',
             unsafe_allow_html=True,
         )
         history_key = "fri_personal_history"
-        instructions = PERSONAL_SYSTEM_PROMPT
-        model = PERSONAL_MODEL
-        use_web_search = False
-        suggestions = SUGGESTED_QUESTIONS_PERSONAL
+        history = st.session_state[history_key]
+        suggestions = _pick_suggestions(history_key, SUGGESTED_QUESTIONS_PERSONAL)
+
+        if not history:
+            _render_suggestion_chips(history_key, suggestions)
+
+        for msg in history:
+            with st.chat_message(msg["role"]):
+                st.markdown(msg["content"])
+
+        pending_prompt = st.session_state.pop(f"{history_key}_pending", None)
+        typed_prompt = st.chat_input("Ask F.R.I.D.A.Y. anything...")
+        prompt = pending_prompt or typed_prompt
+
+        if prompt:
+            history.append({"role": "user", "content": prompt})
+            with st.chat_message("user"):
+                st.markdown(prompt)
+            with st.chat_message("assistant"):
+                answer_text = st.write_stream(_word_stream(faq_engine.answer(prompt)))
+            history.append({"role": "assistant", "content": answer_text})
+
+        if history:
+            _clear_chat_button(history_key)
+
     else:
         st.markdown(
             '<div class="fri-mode-box">🌐 <b>Web Search mode</b> — a general OpenAI-powered '
@@ -234,56 +298,53 @@ with tab1:
             unsafe_allow_html=True,
         )
         history_key = "fri_web_history"
-        instructions = WEB_SYSTEM_PROMPT
-        model = WEB_MODEL
-        use_web_search = True
-        suggestions = SUGGESTED_QUESTIONS_WEB
 
-    history = st.session_state[history_key]
+        if not WEB_SEARCH_ENABLED:
+            st.info(
+                "🚧 **Coming soon.** Web Search mode is fully built and just switched off on "
+                "this deployment for now. Personal mode (above) covers everything about "
+                "Sameer's background and needs no setup at all."
+            )
+        else:
+            history = st.session_state[history_key]
+            suggestions = _pick_suggestions(history_key, SUGGESTED_QUESTIONS_WEB)
 
-    if not history:
-        st.caption("Try asking:")
-        cols = st.columns(len(suggestions))
-        for col, question in zip(cols, suggestions):
-            if col.button(question, key=f"chip_{history_key}_{question}", width='stretch'):
-                st.session_state[f"{history_key}_pending"] = question
-                st.rerun()
+            if not history:
+                _render_suggestion_chips(history_key, suggestions)
 
-    for msg in history:
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
+            for msg in history:
+                with st.chat_message(msg["role"]):
+                    st.markdown(msg["content"])
 
-    pending_prompt = st.session_state.pop(f"{history_key}_pending", None)
-    typed_prompt = st.chat_input("Ask F.R.I.D.A.Y. anything...")
-    prompt = pending_prompt or typed_prompt
+            pending_prompt = st.session_state.pop(f"{history_key}_pending", None)
+            typed_prompt = st.chat_input("Ask F.R.I.D.A.Y. anything...")
+            prompt = pending_prompt or typed_prompt
 
-    if prompt:
-        history.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
+            if prompt:
+                history.append({"role": "user", "content": prompt})
+                with st.chat_message("user"):
+                    st.markdown(prompt)
 
-        with st.chat_message("assistant"):
-            client = get_client()
-            if client is None:
-                answer = (
-                    "F.R.I.D.A.Y. isn't connected yet — add `OPENAI_API_KEY` to "
-                    "`.streamlit/secrets.toml` (see README.md) to turn it on."
-                )
-                st.warning(answer)
-            else:
-                try:
-                    stream = stream_reply(client, model, instructions, history, use_web_search=use_web_search)
-                    answer = st.write_stream(stream)
-                except Exception as exc:
-                    answer = friendly_error(exc)
-                    st.error(answer)
+                with st.chat_message("assistant"):
+                    client = get_client()
+                    if client is None:
+                        answer_text = (
+                            "F.R.I.D.A.Y. isn't connected yet — add `OPENAI_API_KEY` to "
+                            "`.streamlit/secrets.toml` (see README.md) to turn it on."
+                        )
+                        st.warning(answer_text)
+                    else:
+                        try:
+                            stream = stream_reply(client, WEB_MODEL, WEB_SYSTEM_PROMPT, history, use_web_search=True)
+                            answer_text = st.write_stream(stream)
+                        except Exception as exc:
+                            answer_text = friendly_error(exc)
+                            st.error(answer_text)
 
-        history.append({"role": "assistant", "content": answer})
+                history.append({"role": "assistant", "content": answer_text})
 
-    if history:
-        if st.button("🧹 Clear this chat", key=f"clear_{history_key}"):
-            st.session_state[history_key] = []
-            st.rerun()
+            if history:
+                _clear_chat_button(history_key)
 
 # ------------------------------------------------------------
 # TAB 2 — PROJECTS
@@ -320,7 +381,7 @@ with tab2:
 with tab3:
     col1, col2 = st.columns([1, 2])
     with col1:
-        safe_image(PROFILE["photo_path"], width='stretch')
+        safe_image(PROFILE["photo_path"], use_container_width=True)
     with col2:
         st.markdown(f"### {PROFILE['name']}")
         kv_row("role", PROFILE["tagline"])
@@ -355,7 +416,7 @@ with tab3:
     gallery_cols = st.columns(3)
     for i, item in enumerate(GALLERY):
         with gallery_cols[i % 3]:
-            safe_image(item["path"], caption=item["caption"], width='stretch')
+            safe_image(item["path"], caption=item["caption"], use_container_width=True)
 
     st.divider()
     st.markdown("#### Outside of work")
@@ -382,7 +443,7 @@ with tab4:
         img_cols = st.columns(len(a["images"]))
         for col, img_path in zip(img_cols, a["images"]):
             with col:
-                safe_image(img_path, width='stretch')
+                safe_image(img_path, use_container_width=True)
         st.write("")
 
 # ============================================================
