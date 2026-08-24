@@ -140,19 +140,21 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-05",
-        "title": "Network Security System",
-        "one_liner": "An end-to-end ML pipeline for network security, shipped with CI/CD.",
-        "tags": ["Python", "MongoDB", "Scikit-learn", "Docker", "AWS", "GitHub Actions"],
-        "description": (
-            "An end-to-end pipeline covering data ingestion, schema and "
-            "data-drift validation, preprocessing (imputation, RobustScaler, "
-            "SMOTETomek), automated model training and evaluation, artifact "
-            "tracking, containerisation and AWS deployment through a GitHub "
-            "Actions CI/CD workflow."
-        ),
-        "link": None,
-        "link_label": None,
+    "id": "PROJ-05",
+    "title": "ResearchLens",
+    "one_liner": "AI-powered research assistant that helps users discover, analyze, summarize, and interact with research content.",
+    "tags": ["Generative AI","Research Assistant","NLP","Python","Streamlit","LLM","RAG"],
+    "description": (
+        "ResearchLens is an AI-powered research assistant designed to make research "
+        "faster and more accessible. The application provides an interactive interface "
+        "for exploring research content, extracting meaningful insights, generating "
+        "summaries, and interacting with information using natural-language queries. "
+        "Built with Python and Streamlit, the project demonstrates the practical "
+        "application of Generative AI, NLP, and modern AI-assisted research workflows "
+        "in a deployable web application."
+    ),
+    "link": "https://researchlens-m8l3jmghja8kfimjofjzbh.streamlit.app/",
+    "link_label": "Launch Project",
     },
     {
         "id": "PROJ-06",
@@ -175,6 +177,16 @@ PROJECTS = [
 ]
 
 ADDITIONAL_PROJECTS = [
+    {
+            "title": "Network Security System",
+            "description": (
+                "An end-to-end pipeline covering data ingestion, schema and "
+            "data-drift validation, preprocessing (imputation, RobustScaler, "
+            "SMOTETomek), automated model training and evaluation, artifact "
+            "tracking, containerisation and AWS deployment through a GitHub "
+            "Actions CI/CD workflow."
+            ),
+        },
     {
         "title": "Movie Review Sentiment Analysis (RNN)",
         "description": (
