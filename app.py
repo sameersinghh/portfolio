@@ -68,9 +68,22 @@ st.markdown("""
     background-size: 28px 28px;
 }
 .block-container { padding-top: 2.2rem; padding-bottom: 3rem; max-width: 1100px; }
-.stApp, .stApp p, .stApp li, .stApp span, .stApp label { font-family: var(--fri-body); }
-.stApp h1, .stApp h2, .stApp h3 { font-family: var(--fri-display) !important; color: var(--fri-ink); }
+.stApp {
+    font-family: var(--fri-body);
+}
 
+.stApp p,
+.stApp li,
+.stApp label {
+    font-family: var(--fri-body);
+}
+
+.stApp h1,
+.stApp h2,
+.stApp h3 {
+    font-family: var(--fri-display) !important;
+    color: var(--fri-ink);
+}
 /* Hero "query result" card — the one bold element on the page */
 .fri-hero {
     background: var(--fri-card);
