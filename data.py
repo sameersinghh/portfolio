@@ -114,7 +114,33 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-03",
+            "id": "PROJ-03",
+            "title": "Insurance Data Analytics Dashboard",
+            "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
+            "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
+            "description": (
+                "nsurance Data Analysis Dashboard built using Power BI to analyze policy performance, claim trends, customer insights, and business profitability through interactive visualizations and KPI-driven analytics."
+            ),
+            "link": (
+                "https://app.powerbi.com/groups/9b12352b-9223-4641-858d-14654e4d4a73/reports/d3095fa5-e109-42fc-9813-1517cab195c3?ctid=8cb6efdc-e967-4f25-b141-f1002ca257dd&pbi_source=linkShare&bookmarkGuid=5ca80f6a-7ca1-4803-9099-7718380411ad"
+            ),
+            "link_label": "Open dashboard",
+    },
+    {
+        "id": "PROJ-04",
+        "title": "UPI Transaction Data Analytics Dashboard",
+        "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
+        "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
+        "description": (
+           "UPI Transaction Data Analysis dashboard built using Power BI to analyse transaction volume, payment trends, user behaviour, bank performance, and digital payment insights through interactive visualisations and KPI analytics."
+        ),
+        "link": (
+            "https://app.powerbi.com/groups/9b12352b-9223-4641-858d-14654e4d4a73/reports/897b26fa-f408-4e6e-b618-b21eb2a83332?ctid=8cb6efdc-e967-4f25-b141-f1002ca257dd&pbi_source=linkShare"
+        ),
+        "link_label": "Open dashboard",
+    },
+    {
+        "id": "PROJ-05",
         "title": "Network Security System",
         "one_liner": "An end-to-end ML pipeline for network security, shipped with CI/CD.",
         "tags": ["Python", "MongoDB", "Scikit-learn", "Docker", "AWS", "GitHub Actions"],
@@ -129,7 +155,7 @@ PROJECTS = [
         "link_label": None,
     },
     {
-        "id": "PROJ-04",
+        "id": "PROJ-06",
         "title": "YouTube Creator Growth & Ecosystem Analytics",
         "one_liner": "Benchmarking models to predict subscriber count from channel engagement.",
         "tags": ["Python", "Regression", "Random Forest", "NLTK", "TextBlob"],
@@ -141,8 +167,10 @@ PROJECTS = [
             "applied NLTK/TextBlob for NLP, to predict subscriber count from "
             "engagement data."
         ),
-        "link": None,
-        "link_label": None,
+        "link": (
+            "https://github.com/sameersinghh/Youtube_Creator_Growth_Analysis"
+        ),
+        "link_label": "Open Github",
     },
 ]
 
@@ -165,7 +193,7 @@ ADDITIONAL_PROJECTS = [
         ),
     },
     {
-        "title": "F.R.I.D.A.Y. — this assistant",
+        "title": "F.R.I.D.A.Y. — Portfolio assistant",
         "description": (
             "The chat assistant on this page. Personal mode answers only from "
             "this portfolio's content; Web Search mode is a general "
@@ -186,6 +214,8 @@ CERTIFICATIONS = [
     "GenAI Apps using Gemini Pro",
     "Stanford Supervised Machine Learning",
     "Meta Version Control",
+    "Data Analytics Bootcamp"
+    "Data Science + Deep Learning + Gen AI Bootcamp"
 ]
 
 ACHIEVEMENTS = [
