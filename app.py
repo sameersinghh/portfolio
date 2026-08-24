@@ -365,7 +365,7 @@ with tab1:
 
 with tab2:
     st.markdown("### Projects")
-    st.write("Four projects from Sameer's resume, plus a couple of side builds below.")
+    st.write("Projects from Sameer's resume, plus a couple of side builds below.")
 
     for p in PROJECTS:
         st.markdown(f"""
