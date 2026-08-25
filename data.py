@@ -86,16 +86,39 @@ PROJECTS = [
         "tags": ["Python", "Keras", "TensorFlow", "ANN", "Streamlit"],
         "description": (
             "Analysed 10K+ bank customer records across 11 behavioural attributes "
-            "to forecast retention. Covered data cleaning and preprocessing, "
-            "building and optimising an Artificial Neural Network in Keras/"
-            "TensorFlow, and deploying the final predictive pipeline as a "
-            "Streamlit web app."
+            "to forecast customer retention. Covered data cleaning and preprocessing, "
+            "feature preparation, building and optimising an Artificial Neural Network "
+            "in Keras/TensorFlow, and deploying the final predictive pipeline as a "
+            "Streamlit web app. The project demonstrates how behavioural signals can "
+            "be converted into customer-level churn risk for retention-oriented "
+            "decision making."
         ),
         "link": "https://customerchurnprediction-sameersingh.streamlit.app/",
         "link_label": "Launch project",
     },
     {
         "id": "PROJ-02",
+        "title": "Digital Audience & Campaign Optimization Platform",
+        "one_liner": "Segmenting customers, scoring campaign propensity, and turning audience data into campaign decisions.",
+        "tags": [
+            "Python", "Streamlit", "Scikit-learn", "XGBoost",
+            "K-Means", "Audience Segmentation", "A/B Testing", "Campaign Analytics"
+        ],
+        "description": (
+            "An internal-style digital marketing analytics platform designed to help "
+            "commercial and marketing teams move from raw customer behaviour to "
+            "actionable campaign audiences. The platform combines K-Means audience "
+            "segmentation, XGBoost propensity scoring, audience filtering, campaign "
+            "optimization, funnel analytics, channel performance, experimentation "
+            "analysis, and model intelligence in a fast Streamlit interface. "
+            "It is designed as a lightweight, deployment-ready analytics application "
+            "with no external API dependency for the core workflow."
+        ),
+        "link": "",
+        "link_label": "Internal project demo",
+    },
+    {
+        "id": "PROJ-04",
         "title": "Merchant Sales Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -114,12 +137,12 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-            "id": "PROJ-03",
+            "id": "PROJ-04",
             "title": "Insurance Data Analytics Dashboard",
             "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
             "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
             "description": (
-                "nsurance Data Analysis Dashboard built using Power BI to analyze policy performance, claim trends, customer insights, and business profitability through interactive visualizations and KPI-driven analytics."
+                "Insurance Data Analysis Dashboard built using Power BI to analyze policy performance, claim trends, customer insights, and business profitability through interactive visualizations and KPI-driven analytics."
             ),
             "link": (
                 "https://app.powerbi.com/groups/9b12352b-9223-4641-858d-14654e4d4a73/reports/d3095fa5-e109-42fc-9813-1517cab195c3?ctid=8cb6efdc-e967-4f25-b141-f1002ca257dd&pbi_source=linkShare&bookmarkGuid=5ca80f6a-7ca1-4803-9099-7718380411ad"
@@ -127,7 +150,7 @@ PROJECTS = [
             "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-04",
+        "id": "PROJ-05",
         "title": "UPI Transaction Data Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -140,7 +163,7 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-    "id": "PROJ-05",
+    "id": "PROJ-06",
     "title": "ResearchLens",
     "one_liner": "AI-powered research assistant that helps users discover, analyze, summarize, and interact with research content.",
     "tags": ["Generative AI","Research Assistant","NLP","Python","Streamlit","LLM","RAG"],
@@ -157,7 +180,7 @@ PROJECTS = [
     "link_label": "Launch Project",
     },
     {
-        "id": "PROJ-06",
+        "id": "PROJ-07",
         "title": "YouTube Creator Growth & Ecosystem Analytics",
         "one_liner": "Benchmarking models to predict subscriber count from channel engagement.",
         "tags": ["Python", "Regression", "Random Forest", "NLTK", "TextBlob"],
@@ -226,7 +249,7 @@ CERTIFICATIONS = [
     "GenAI Apps using Gemini Pro",
     "Stanford Supervised Machine Learning",
     "Meta Version Control",
-    "Data Analytics Bootcamp"
+    "Data Analytics Bootcamp",
     "Data Science + Deep Learning + Gen AI Bootcamp"
 ]
 
