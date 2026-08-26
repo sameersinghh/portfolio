@@ -1,11 +1,10 @@
 """
 Portfolio content for Sameer Singh.
-
-Everything the site displays — and everything F.R.I.D.A.Y. (personal mode)
-is allowed to know — is defined ONCE here as plain data. app.py renders it,
-and build_personal_system_prompt() turns it into the assistant's system
-prompt. Update a bullet point here and both the page and the assistant
-stay in sync automatically.
+Everything the site displays - and everything F.R.I.D.A.Y. (personal mode)
+is allowed to know - is defined ONCE here as plain data.
+app.py renders it, and build_personal_system_prompt() turns it into the
+assistant's system prompt. Update a bullet point here and both the page and
+the assistant stay in sync automatically.
 
 To update the site: edit the structures below. Nothing else needs to change.
 """
@@ -25,13 +24,13 @@ PROFILE = {
     "resume_path": "assets/resume.pdf",
     "photo_path": "assets/me.jpg",
     "summary": (
-        "Data Analyst / Data Science professional with 2 years of experience "
+        "Data Analyst/ Data Science professional with 2 years of experience "
         "delivering business intelligence and analytical solutions. Experienced "
         "in transforming large datasets into actionable insights through "
         "exploratory data analysis, customer segmentation, A/B testing, "
         "statistical modelling and KPI analysis. Hands-on experience applying "
         "Generative AI, MLOps and NLP to build analytical applications."
-    ),
+    )
 }
 
 SKILLS = {
@@ -40,7 +39,7 @@ SKILLS = {
     "Data Engineering": ["Extraction", "Cleaning", "Transformation", "ETL", "Processing"],
     "Visualisation & BI": ["Tableau", "Power BI", "Matplotlib", "Seaborn", "Dashboard development"],
     "Statistics": ["Hypothesis testing", "Regression analysis", "A/B testing", "Forecasting", "Quantitative analysis"],
-    "AI / GenAI": ["Machine Learning", "Generative AI", "Google Gemini Pro", "LangChain", "Streamlit", "LLM-powered apps"],
+    "Al / GenAI": ["Machine Learning", "Generative Al", "Google Gemini Pro", "LangChain", "Streamlit", "LLM-powered apps"],
     "Professional": ["Strategic thinking", "Communication", "Presentation skills"],
 }
 
@@ -49,30 +48,23 @@ EXPERIENCE = [
         "role": "Analyst",
         "company": "KPMG",
         "location": "Bengaluru, Karnataka",
-        "dates": "Sep 2024 – Jun 2026",
+        "dates": "Sep 2024 - Jun 2026",
         "bullets": [
-            "Built and maintained 5 dashboards across Tableau and Power BI for "
-            "banking-sector and mobile-tower-operator engagements.",
+            "Built and maintained 5 dashboards across Tableau and Power BI for banking-sector and mobile-tower-operator engagements.",
             "Wrote and optimised SQL queries to work with 400K+ row datasets.",
-            "Used Python, SQL and statistical techniques to analyse operational "
-            "and business data, identifying KPI trends and reporting inconsistencies.",
-            "Translated stakeholder requirements into scalable analytical and "
-            "reporting solutions, then automated the recurring reporting "
-            "workflows and dashboard pipelines.",
-            "Communicated findings through dashboards and business "
-            "presentations, and supported data quality and validation processes.",
+            "Used Python, SQL and statistical techniques to analyse operational and business data, identifying KPI trends and reporting inconsistencies.",
+            "Translated stakeholder requirements into scalable analytical and reporting solutions, then automated the recurring reporting workflows and dashboard pipelines.",
+            "Communicated findings through dashboards and business presentations, and supported data quality and validation processes.",
         ],
     },
     {
         "role": "Academic Intern",
         "company": "KPMG",
         "location": "Bengaluru, Karnataka",
-        "dates": "Apr 2024 – Sep 2024",
+        "dates": "Apr 2024 - Sep 2024",
         "bullets": [
-            "Supported dashboard development and maintenance using Tableau, "
-            "Power BI and SQL.",
-            "Prepared and validated telecom datasets and performed data QA, "
-            "resolving reporting inconsistencies.",
+            "Supported dashboard development and maintenance using Tableau, Power BI and SQL.",
+            "Prepared and validated telecom datasets and performed data QA, resolving reporting inconsistencies.",
             "Performed ad hoc analytical reporting.",
         ],
     },
@@ -81,23 +73,6 @@ EXPERIENCE = [
 PROJECTS = [
     {
         "id": "PROJ-01",
-        "title": "Customer Churn Prediction (ANN)",
-        "one_liner": "Predicting which bank customers are likely to leave, from behavioural data.",
-        "tags": ["Python", "Keras", "TensorFlow", "ANN", "Streamlit"],
-        "description": (
-            "Analysed 10K+ bank customer records across 11 behavioural attributes "
-            "to forecast customer retention. Covered data cleaning and preprocessing, "
-            "feature preparation, building and optimising an Artificial Neural Network "
-            "in Keras/TensorFlow, and deploying the final predictive pipeline as a "
-            "Streamlit web app. The project demonstrates how behavioural signals can "
-            "be converted into customer-level churn risk for retention-oriented "
-            "decision making."
-        ),
-        "link": "https://customerchurnprediction-sameersingh.streamlit.app/",
-        "link_label": "Launch project",
-    },
-    {
-        "id": "PROJ-02",
         "title": "Digital Audience & Campaign Optimisation Platform",
         "one_liner": "Segmenting customers, scoring campaign propensity, and turning audience data into campaign decisions.",
         "tags": [
@@ -118,7 +93,7 @@ PROJECTS = [
         "link_label": "Launch Project",
     },
     {
-        "id": "PROJ-04",
+        "id": "PROJ-02",
         "title": "Merchant Sales Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -137,79 +112,95 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-            "id": "PROJ-04",
-            "title": "Insurance Data Analytics Dashboard",
-            "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
-            "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
-            "description": (
-                "Insurance Data Analysis Dashboard built using Power BI to analyze policy performance, claim trends, customer insights, and business profitability through interactive visualizations and KPI-driven analytics."
-            ),
-            "link": (
-                "https://app.powerbi.com/groups/9b12352b-9223-4641-858d-14654e4d4a73/reports/d3095fa5-e109-42fc-9813-1517cab195c3?ctid=8cb6efdc-e967-4f25-b141-f1002ca257dd&pbi_source=linkShare&bookmarkGuid=5ca80f6a-7ca1-4803-9099-7718380411ad"
-            ),
-            "link_label": "Open dashboard",
-    },
-    {
-        "id": "PROJ-05",
-        "title": "UPI Transaction Data Analytics Dashboard",
+        "id": "PROJ-03",
+        "title": "Insurance Data Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
         "description": (
-           "UPI Transaction Data Analysis dashboard built using Power BI to analyse transaction volume, payment trends, user behaviour, bank performance, and digital payment insights through interactive visualisations and KPI analytics."
+            "Insurance Data Analysis Dashboard built using Power BI to analyze policy performance, claim trends, "
+            "customer insights, and business profitability through interactive visualizations and KPI-driven analytics."
         ),
         "link": (
-            "https://app.powerbi.com/groups/9b12352b-9223-4641-858d-14654e4d4a73/reports/897b26fa-f408-4e6e-b618-b21eb2a83332?ctid=8cb6efdc-e967-4f25-b141-f1002ca257dd&pbi_source=linkShare"
+            "https://app.powerbi.com/groups/9b12352b-9223-4641-8580-14654e4d4a73/reports/d3095fa5-e109-42fc-"
+            "9813-1517cab195c3?ctid=8cb6efdc-e967-4f25-b141-f1002ca257dd&pbi_source=linkShare&bookmarkGuid=5c"
+            "a80f6a-7ca1-4803-9099-7718380411ad"
         ),
         "link_label": "Open dashboard",
     },
     {
-    "id": "PROJ-06",
-    "title": "ResearchLens",
-    "one_liner": "AI-powered research assistant that helps users discover, analyze, summarize, and interact with research content.",
-    "tags": ["Generative AI","Research Assistant","NLP","Python","Streamlit","LLM","RAG"],
-    "description": (
-        "ResearchLens is an AI-powered research assistant designed to make research "
-        "faster and more accessible. The application provides an interactive interface "
-        "for exploring research content, extracting meaningful insights, generating "
-        "summaries, and interacting with information using natural-language queries. "
-        "Built with Python and Streamlit, the project demonstrates the practical "
-        "application of Generative AI, NLP, and modern AI-assisted research workflows "
-        "in a deployable web application."
-    ),
-    "link": "https://researchlens-m8l3jmghja8kfimjofjzbh.streamlit.app/",
-    "link_label": "Launch Project",
+        "id": "PROJ-04",
+        "title": "UPI Transaction Data Analytics Dashboard",
+        "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
+        "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
+        "description": (
+            "UPI Transaction Data Analysis dashboard built using Power BI to analyse transaction volume, payment "
+            "trends, user behaviour, bank performance, and digital payment insights through interactive visualisations and KPI analytics."
+        ),
+        "link": (
+            "https://app.powerbi.com/groups/9b12352b-9223-4641-858d-14654e4d4a73/reports/897b26fa-f408-4e6e-"
+            "b618-b21eb2a83332?ctid=8cb6efdc-e967-4f25-b141-f1002ca257dd&pbi_source=linkShare"
+        ),
+        "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-07",
+        "id": "PROJ-05",
+        "title": "ResearchLens",
+        "one_liner": "Al-powered research assistant that helps users discover, analyze, summarize, and interact with research content.",
+        "tags": ["Generative Al", "Research Assistant", "NLP", "Python", "Streamlit", "LLM", "RAG"],
+        "description": (
+            "ResearchLens is an Al-powered research assistant designed to make research "
+            "faster and more accessible. The application provides an interactive interface "
+            "for exploring research content, extracting meaningful insights, generating "
+            "summaries, and interacting with information using natural-language queries. "
+            "Built with Python and Streamlit, the project demonstrates the practical "
+            "application of Generative Al, NLP, and modern Al-assisted research workflows "
+            "in a deployable web application."
+        ),
+        "link": "https://researchlens-m813jmghja8kfimjofjzbh.streamlit.app/",
+        "link_label": "Launch Project",
+    },
+    {
+        "id": "PROJ-06",
         "title": "YouTube Creator Growth & Ecosystem Analytics",
         "one_liner": "Benchmarking models to predict subscriber count from channel engagement.",
         "tags": ["Python", "Regression", "Random Forest", "NLTK", "TextBlob"],
         "description": (
             "Analysed 995 top YouTube channels from the Global YouTube "
-            "Statistics dataset (28 attributes, cleaned to 554 records / 23 "
+            "Statistics dataset (28 attributes, cleaned to 554 records/23 "
             "features). Benchmarked Linear, Ridge, Lasso and Elastic Net "
             "regression against Decision Tree and Random Forest models, and "
             "applied NLTK/TextBlob for NLP, to predict subscriber count from "
             "engagement data."
         ),
-        "link": (
-            "https://github.com/sameersinghh/Youtube_Creator_Growth_Analysis"
+        "link": "https://github.com/sameersinghh/Youtube_Creator_Growth_Analysis",
+        "link_label": "Open Github",
+    },
+    {
+        "id": "PROJ-07",
+        "title": "Customer Churn & Audience Analytics",
+        "one_liner": "A comprehensive project combining churn prediction with audience intelligence and segmentation.",
+        "tags": ["Python", "Machine Learning", "XGBoost", "K-Means", "Predictive Modeling", "Customer Analytics"],
+        "description": (
+            "An advanced analytics project focused on customer retention and audience intelligence. "
+            "The project utilizes K-Means for building customer segments and XGBoost for scoring churn propensity, "
+            "providing a strong data-driven foundation for targeting, personalization, and funnel analytics."
         ),
+        "link": "https://github.com/sameersinghh/Customer_Churn_Audience_Analytics",
         "link_label": "Open Github",
     },
 ]
 
 ADDITIONAL_PROJECTS = [
     {
-            "title": "Network Security System",
-            "description": (
-                "An end-to-end pipeline covering data ingestion, schema and "
+        "title": "Network Security System",
+        "description": (
+            "An end-to-end pipeline covering data ingestion, schema and "
             "data-drift validation, preprocessing (imputation, RobustScaler, "
-            "SMOTETomek), automated model training and evaluation, artifact "
+            "SMOTE Tomek), automated model training and evaluation, artifact "
             "tracking, containerisation and AWS deployment through a GitHub "
             "Actions CI/CD workflow."
-            ),
-        },
+        ),
+    },
     {
         "title": "Movie Review Sentiment Analysis (RNN)",
         "description": (
@@ -228,7 +219,7 @@ ADDITIONAL_PROJECTS = [
         ),
     },
     {
-        "title": "F.R.I.D.A.Y. — Portfolio assistant",
+        "title": "F.R.I.D.A.Y. - Portfolio assistant",
         "description": (
             "The chat assistant on this page. Personal mode answers only from "
             "this portfolio's content; Web Search mode is a general "
@@ -238,7 +229,7 @@ ADDITIONAL_PROJECTS = [
 ]
 
 EDUCATION = {
-    "degree": "B.Tech, Computer Science — Artificial Intelligence & Machine Learning",
+    "degree": "B.Tech, Computer Science - Artificial Intelligence & Machine Learning",
     "institution": "SRMIST University",
     "completed": "November 2024",
 }
@@ -246,17 +237,17 @@ EDUCATION = {
 CERTIFICATIONS = [
     "Google Advanced Data Analytics",
     "IBM Data Science",
-    "GenAI Apps using Gemini Pro",
+    "GenAl Apps using Gemini Pro",
     "Stanford Supervised Machine Learning",
     "Meta Version Control",
     "Data Analytics Bootcamp",
-    "Data Science + Deep Learning + Gen AI Bootcamp"
+    "Data Science + Deep Learning + Gen Al Bootcamp"
 ]
 
 ACHIEVEMENTS = [
     {
         "id": "REC-01",
-        "title": "Two SPOT Awards — KPMG India",
+        "title": "Two SPOT Awards - KPMG India",
         "description": (
             "Recognised twice with KPMG India's SPOT award for contributions "
             "to the team and to client projects."
@@ -265,7 +256,7 @@ ACHIEVEMENTS = [
     },
     {
         "id": "REC-02",
-        "title": "3rd Place — Ubisoft India FindTheLag Contest",
+        "title": "3rd Place - Ubisoft India FindTheLag Contest",
         "description": "Placed third at the Ubisoft India FindTheLag contest, held at IIT Bombay.",
         "images": ["assets/iitbombay.jpg"],
     },
@@ -278,14 +269,14 @@ ACHIEVEMENTS = [
 ]
 
 BOOKS = [
-    "The Alchemist — Paulo Coelho",
-    "Man's Search for Meaning — Viktor Frankl",
-    "The Power of Habit — Charles Duhigg",
-    "The 80/20 Principle — Richard Koch",
-    "How to Win Friends and Influence People — Dale Carnegie",
-    "The 7 Habits of Highly Effective People — Stephen R. Covey",
-    "Rework — Jason Fried & David Heinemeier Hansson",
-    "The Psychology of Money — Morgan Housel",
+    "The Alchemist - Paulo Coelho",
+    "Man's Search for Meaning - Viktor Frankl",
+    "The Power of Habit - Charles Duhigg",
+    "The 80/20 Principle - Richard Koch",
+    "How to Win Friends and Influence People - Dale Carnegie",
+    "The 7 Habits of Highly Effective People - Stephen R. Covey",
+    "Rework - Jason Fried & David Heinemeier Hansson",
+    "The Psychology of Money - Morgan Housel",
 ]
 
 HOBBIES = ["Cricket", "Football", "Badminton", "Movies", "Music", "Photography", "Travelling"]
@@ -307,7 +298,7 @@ SUGGESTED_QUESTIONS_PERSONAL = [
     "Tell me about the Customer Churn project",
     "What's the Merchant Sales Dashboard about?",
     "What did he do in the YouTube analytics project?",
-    "What are his BI / dashboard skills?",
+    "What are his BI/dashboard skills?",
     "What's his experience with Python?",
     "What GenAI / LLM work has he done?",
     "What's his educational background?",
@@ -320,32 +311,28 @@ SUGGESTED_QUESTIONS_PERSONAL = [
 
 SUGGESTED_QUESTIONS_WEB = [
     "What does a Data/BI Analyst interview usually cover?",
-    "Power BI vs Tableau — what's the real difference?",
+    "Power BI vs Tableau - what's the real difference?",
     "What's new in data analytics this month?",
 ]
-
 
 def _bullets(items):
     return "\n".join(f"- {item}" for item in items)
 
-
 def build_personal_system_prompt():
     """Assemble F.R.I.D.A.Y.'s (personal-mode) system prompt from the data above."""
     lines = [
-        "You are F.R.I.D.A.Y., the personal AI assistant on Sameer Singh's "
-        "portfolio site. You represent Sameer to recruiters, hiring managers "
+        "You are F.R.I.D.A.Y., the personal Al assistant on Sameer Singh's ",
+        "portfolio site. You represent Sameer to recruiters, hiring managers ",
         "and other visitors.",
-        "",
         "Rules:",
-        "1. Answer ONLY using the portfolio information below. Never invent "
-        "employers, titles, results, technologies, certifications, education "
+        "1. Answer ONLY using the portfolio information below. Never invent ",
+        "employers, titles, results, technologies, certifications, education",
         "or numbers that aren't stated here.",
-        "2. If the answer isn't in this context, say so plainly: \"I don't "
-        "have that in Sameer's portfolio — you could ask him directly.\"",
-        "3. Speak about Sameer in the third person, as his assistant — not as "
+        "2. If the answer isn't in this context, say so plainly: \"I don't",
+        "have that in Sameer's portfolio - you could ask him directly.\"",
+        "3. Speak about Sameer in the third person, as his assistant - not as ",
         "if you are Sameer.",
         "4. Be concise. Prefer short paragraphs or bullet points over long essays.",
-        "",
         "=== PROFILE ===",
         f"Name: {PROFILE['name']}",
         f"Role: {PROFILE['tagline']}",
@@ -354,69 +341,67 @@ def build_personal_system_prompt():
         f"{PROFILE['work_location_note']}",
         f"Status: {PROFILE['status']}",
         f"Summary: {PROFILE['summary']}",
-        "",
-        "=== SKILLS ===",
+        "=== SKILLS ==="
     ]
+    
     for category, items in SKILLS.items():
         lines.append(f"{category}: {', '.join(items)}")
-
-    lines += ["", "=== EXPERIENCE ==="]
+        
+    lines += ["\n=== EXPERIENCE ==="]
     for job in EXPERIENCE:
-        lines.append(f"{job['role']}, {job['company']} ({job['location']}) — {job['dates']}")
+        lines.append(f"{job['role']}, {job['company']} ({job['location']}) - {job['dates']}")
         lines.append(_bullets(job["bullets"]))
         lines.append("")
-
+        
     lines.append("=== PROJECTS ===")
     for p in PROJECTS:
         lines.append(f"{p['title']}: {p['description']}")
         lines.append(f"Technologies: {', '.join(p['tags'])}")
         lines.append("")
-
+        
     lines.append("=== ADDITIONAL / SIDE PROJECTS ===")
     for p in ADDITIONAL_PROJECTS:
         lines.append(f"{p['title']}: {p['description']}")
-    lines.append("")
-
+        lines.append("")
+        
     lines.append("=== EDUCATION ===")
-    lines.append(f"{EDUCATION['degree']}, {EDUCATION['institution']} — completed {EDUCATION['completed']}")
+    lines.append(f"{EDUCATION['degree']}, {EDUCATION['institution']} - completed {EDUCATION['completed']}")
     lines.append("")
-
+    
     lines.append("=== CERTIFICATIONS ===")
     lines.append(_bullets(CERTIFICATIONS))
     lines.append("")
-
+    
     lines.append("=== ACHIEVEMENTS ===")
     for a in ACHIEVEMENTS:
         lines.append(f"- {a['title']}: {a['description']}")
-    lines.append("")
-
+        lines.append("")
+        
     lines.append("=== INTERESTS ===")
     lines.append(f"Hobbies: {', '.join(HOBBIES)}")
     lines.append(f"Favourite books: {', '.join(BOOKS)}")
     lines.append("")
-
+    
     lines.append("=== CONTACT ===")
     lines.append(f"Email: {PROFILE['email']}")
     lines.append(f"GitHub: {PROFILE['github']}")
     lines.append(f"LinkedIn: {PROFILE['linkedin']}")
     lines.append(f"Portfolio: {PROFILE['portfolio']}")
-
+    
     return "\n".join(lines)
-
 
 def build_web_system_prompt():
     """Assemble the system prompt for Web Search mode."""
     return (
         "You are F.R.I.D.A.Y. in Web Search mode, on Sameer Singh's portfolio "
-        "site. You are a general-purpose assistant with live web search. "
-        "Answer accurately and search the web when a question needs current "
+        "site. You are a general-purpose assistant with live web search."
+        "Answer accurately and search the web when a question needs current"
         "or factual information you're not certain of. Never pretend to have "
         "searched if you haven't.\n\n"
         "If asked about Sameer specifically, you may draw on the portfolio "
-        "context below — but clearly distinguish it from anything found via "
+        "context below - but clearly distinguish it from anything found via "
         "web search:\n\n" + build_personal_system_prompt()
     )
-
 
 PERSONAL_SYSTEM_PROMPT = build_personal_system_prompt()
 WEB_SYSTEM_PROMPT = build_web_system_prompt()
