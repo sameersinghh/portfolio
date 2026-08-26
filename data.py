@@ -98,7 +98,7 @@ PROJECTS = [
     },
     {
         "id": "PROJ-02",
-        "title": "Digital Audience & Campaign Optimization Platform",
+        "title": "Digital Audience & Campaign Optimisation Platform",
         "one_liner": "Segmenting customers, scoring campaign propensity, and turning audience data into campaign decisions.",
         "tags": [
             "Python", "Streamlit", "Scikit-learn", "XGBoost",
@@ -109,13 +109,13 @@ PROJECTS = [
             "commercial and marketing teams move from raw customer behaviour to "
             "actionable campaign audiences. The platform combines K-Means audience "
             "segmentation, XGBoost propensity scoring, audience filtering, campaign "
-            "optimization, funnel analytics, channel performance, experimentation "
+            "optimisation, funnel analytics, channel performance, experimentation "
             "analysis, and model intelligence in a fast Streamlit interface. "
             "It is designed as a lightweight, deployment-ready analytics application "
             "with no external API dependency for the core workflow."
         ),
-        "link": "",
-        "link_label": "Internal project demo",
+        "link": "https://digital-audience-campaign-optimization-platform-sameersinghh.streamlit.app/",
+        "link_label": "Launch Project",
     },
     {
         "id": "PROJ-04",
