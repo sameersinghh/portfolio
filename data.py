@@ -94,6 +94,36 @@ PROJECTS = [
     },
     {
         "id": "PROJ-02",
+        "title": "Customer Churn & Audience Analytics",
+        "one_liner": "A comprehensive project combining churn prediction with audience intelligence and segmentation.",
+        "tags": ["Python", "Machine Learning", "XGBoost", "K-Means", "Predictive Modeling", "Customer Analytics"],
+        "description": (
+            "An advanced analytics project focused on customer retention and audience intelligence. "
+            "The project utilizes K-Means for building customer segments and XGBoost for scoring churn propensity, "
+            "providing a strong data-driven foundation for targeting, personalization, and funnel analytics."
+        ),
+        "link": "https://customerchurnaudienceanalytics-sameersinghh.streamlit.app/",
+        "link_label": "Launch Project",
+    },
+    {
+        "id": "PROJ-03",
+        "title": "ResearchLens",
+        "one_liner": "Al-powered research assistant that helps users discover, analyze, summarize, and interact with research content.",
+        "tags": ["Generative Al", "Research Assistant", "NLP", "Python", "Streamlit", "LLM", "RAG"],
+        "description": (
+            "ResearchLens is an Al-powered research assistant designed to make research "
+            "faster and more accessible. The application provides an interactive interface "
+            "for exploring research content, extracting meaningful insights, generating "
+            "summaries, and interacting with information using natural-language queries. "
+            "Built with Python and Streamlit, the project demonstrates the practical "
+            "application of Generative Al, NLP, and modern Al-assisted research workflows "
+            "in a deployable web application."
+        ),
+        "link": "https://researchlens-m813jmghja8kfimjofjzbh.streamlit.app/",
+        "link_label": "Launch Project",
+    },
+    {
+        "id": "PROJ-04",
         "title": "Merchant Sales Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -112,7 +142,7 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-03",
+        "id": "PROJ-05",
         "title": "Insurance Data Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -128,7 +158,7 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-04",
+        "id": "PROJ-06",
         "title": "UPI Transaction Data Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -143,24 +173,7 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-05",
-        "title": "ResearchLens",
-        "one_liner": "Al-powered research assistant that helps users discover, analyze, summarize, and interact with research content.",
-        "tags": ["Generative Al", "Research Assistant", "NLP", "Python", "Streamlit", "LLM", "RAG"],
-        "description": (
-            "ResearchLens is an Al-powered research assistant designed to make research "
-            "faster and more accessible. The application provides an interactive interface "
-            "for exploring research content, extracting meaningful insights, generating "
-            "summaries, and interacting with information using natural-language queries. "
-            "Built with Python and Streamlit, the project demonstrates the practical "
-            "application of Generative Al, NLP, and modern Al-assisted research workflows "
-            "in a deployable web application."
-        ),
-        "link": "https://researchlens-m813jmghja8kfimjofjzbh.streamlit.app/",
-        "link_label": "Launch Project",
-    },
-    {
-        "id": "PROJ-06",
+        "id": "PROJ-07",
         "title": "YouTube Creator Growth & Ecosystem Analytics",
         "one_liner": "Benchmarking models to predict subscriber count from channel engagement.",
         "tags": ["Python", "Regression", "Random Forest", "NLTK", "TextBlob"],
@@ -174,20 +187,7 @@ PROJECTS = [
         ),
         "link": "https://github.com/sameersinghh/Youtube_Creator_Growth_Analysis",
         "link_label": "Open Github",
-    },
-    {
-        "id": "PROJ-07",
-        "title": "Customer Churn & Audience Analytics",
-        "one_liner": "A comprehensive project combining churn prediction with audience intelligence and segmentation.",
-        "tags": ["Python", "Machine Learning", "XGBoost", "K-Means", "Predictive Modeling", "Customer Analytics"],
-        "description": (
-            "An advanced analytics project focused on customer retention and audience intelligence. "
-            "The project utilizes K-Means for building customer segments and XGBoost for scoring churn propensity, "
-            "providing a strong data-driven foundation for targeting, personalization, and funnel analytics."
-        ),
-        "link": "https://github.com/sameersinghh/Customer_Churn_Audience_Analytics",
-        "link_label": "Open Github",
-    },
+    }
 ]
 
 ADDITIONAL_PROJECTS = [
