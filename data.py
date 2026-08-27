@@ -73,6 +73,27 @@ EXPERIENCE = [
 PROJECTS = [
     {
         "id": "PROJ-01",
+        "title": "CX Listening Lab — Customer Voice & Journey Analytics",
+        "one_liner": "Turning customer complaints into evidence-backed CX insights, friction priorities, and executive actions.",
+        "tags": [
+            "Python", "SQL", "Streamlit", "NLP", "TF-IDF", "NMF",
+            "Statistics", "Hypothesis Testing", "Regression", "GenAI", "CX Analytics"
+        ],
+        "description": (
+            "A decision-oriented customer experience analytics application built around "
+            "public CFPB Consumer Complaint Database data. The platform analyzes American "
+            "Express complaint signals alongside a peer-issuer benchmark, combining cross-channel "
+            "friction analysis, customer-voice sentiment and theme discovery, confidence intervals, "
+            "hypothesis testing, predictive driver analysis, an interactive SQL lab, and an evidence-grounded "
+            "GenAI executive brief. The project explicitly distinguishes observed complaint patterns "
+            "from representative customer-experience claims and is designed as a lightweight, fast "
+            "Streamlit Cloud deployment. Independent portfolio project; not affiliated with or endorsed by American Express."
+        ),
+        "link": "https://cxlisteninglab-sameersinghh.streamlit.app/",
+        "link_label": "Launch Project",
+    },
+    {
+        "id": "PROJ-02",
         "title": "Digital Audience & Campaign Optimisation Platform",
         "one_liner": "Segmenting customers, scoring campaign propensity, and turning audience data into campaign decisions.",
         "tags": [
@@ -93,7 +114,7 @@ PROJECTS = [
         "link_label": "Launch Project",
     },
     {
-        "id": "PROJ-02",
+        "id": "PROJ-03",
         "title": "Customer Churn & Audience Analytics",
         "one_liner": "A comprehensive project combining churn prediction with audience intelligence and segmentation.",
         "tags": ["Python", "Machine Learning", "XGBoost", "K-Means", "Predictive Modeling", "Customer Analytics"],
@@ -106,7 +127,7 @@ PROJECTS = [
         "link_label": "Launch Project",
     },
     {
-        "id": "PROJ-03",
+        "id": "PROJ-04",
         "title": "ResearchLens",
         "one_liner": "Al-powered research assistant that helps users discover, analyze, summarize, and interact with research content.",
         "tags": ["Generative Al", "Research Assistant", "NLP", "Python", "Streamlit", "LLM", "RAG"],
@@ -123,7 +144,7 @@ PROJECTS = [
         "link_label": "Launch Project",
     },
     {
-        "id": "PROJ-04",
+        "id": "PROJ-05",
         "title": "Merchant Sales Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -142,7 +163,7 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-05",
+        "id": "PROJ-06",
         "title": "Insurance Data Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -158,7 +179,7 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-06",
+        "id": "PROJ-07",
         "title": "UPI Transaction Data Analytics Dashboard",
         "one_liner": "A Power BI dashboard answering 8 defined merchant sales questions.",
         "tags": ["Power BI", "DAX", "Data Modelling", "Business Analytics"],
@@ -173,7 +194,7 @@ PROJECTS = [
         "link_label": "Open dashboard",
     },
     {
-        "id": "PROJ-07",
+        "id": "PROJ-08",
         "title": "YouTube Creator Growth & Ecosystem Analytics",
         "one_liner": "Benchmarking models to predict subscriber count from channel engagement.",
         "tags": ["Python", "Regression", "Random Forest", "NLTK", "TextBlob"],
