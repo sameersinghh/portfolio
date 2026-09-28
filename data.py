@@ -140,7 +140,7 @@ PROJECTS = [
             "application of Generative Al, NLP, and modern Al-assisted research workflows "
             "in a deployable web application."
         ),
-        "link": "https://researchlens-m813jmghja8kfimjofjzbh.streamlit.app/",
+        "link": "https://researchlens-m8l3jmghja8kfimjofjzbh.streamlit.app/",
         "link_label": "Launch Project",
     },
     {
